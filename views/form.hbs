@@ -1,0 +1,47 @@
+<form method="POST" class="my-5 px-5" {{#if update}} action="/users/edit/{{user._id}}" {{else}} action="/users/add" {{/if}} > 
+    <div class="form-group">
+        <input type="text" name="firstName" value="{{user.first_name}}"  class="form-control"  placeholder="First Name">
+    </div>
+    <div class="form-group">
+        <input type="text" name="lastName" value="{{user.last_name}}"  class="form-control"  placeholder="Last Name">
+    </div>
+    <div class="form-group">
+        <input type="email" name="email" value="{{user.email}}"  class="form-control" aria-describedby="emailHelp"
+            placeholder="Enter email" >
+    </div>
+    <div class="form-group">
+        <input type="number" name="age" value="{{user.age}}"  class="form-control"  placeholder="Age">
+    </div>
+    <div class="form-group">
+        <input type="text" name="username" value="{{user.username}}"  class="form-control"  placeholder="Username">
+    </div>
+
+    <div class="form-group">
+        <input type="text" name="shortBio" value="{{user.short_bio}}"  class="form-control"  placeholder="Short Bio">
+    </div>
+    <div class="form-group">
+        <input type="text" name="street" value="{{user.address.street}}"  class="form-control"  placeholder="Street">
+    </div>
+    <div class="form-group">
+        <input type="text" name="streetNumber" value="{{user.address.street_number}}"  class="form-control"  placeholder="Street Number">
+    </div>
+    <div class="form-group">
+        <input type="text" name="zip" value="{{user.address.zip}}"  class="form-control"  placeholder="Zip">
+    </div>
+    <div class="form-group">
+        <input type="text" name="city" value="{{user.address.city}}"  class="form-control"  placeholder="City">
+    </div>
+    <div class="form-group">
+        <input type="text" name="country" value="{{user.address.country}}"  class="form-control"  placeholder="Country">
+    </div>
+    <div class="form-group">
+        <input type="text" name="state" value="{{user.address.state}}"  class="form-control"  placeholder="State">
+    </div>
+    <div class="form-group">
+        <input type="text" name="phoneNumber" value="{{user.phone_number}}"  class="form-control"  placeholder="Phone Number">
+    </div>
+    {{#if update}}
+    <input type="hidden" name="_id" value="{{user._id}}"  class="form-control"  placeholder="Phone Number">
+    {{/if}}
+    <button type="submit" class="btn btn-primary form-control">{{title}}</button>
+</form>

@@ -1,0 +1,24 @@
+<div style="display: table;margin: 0 auto;">
+    <img src="http://via.placeholder.com/300/ff69b4/808080?text=FakePicture">
+    <ul>
+        <div><strong>Name:</strong> {{user.first_name}}</div>
+        <div><strong>Last:</strong> {{user.last_name}}</div>
+        <div><strong>Username:</strong> {{user.username}}</div>
+        <email><strong>Email:</strong> {{user.email}}</email>
+        <div><strong>Age:</strong> {{user.age}}</div>
+        <div><strong>Address:</strong>
+            <ul>
+                {{#each user.address}}
+                {{#unless @first}}
+                <li>
+                    <strong>{{@key}}</strong> {{this}}
+                </li>
+
+                {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div><strong>created at:</strong> {{user.createdAt}}</div>
+        <div><strong>updated at:</strong> {{user.updatedAt}}</div>
+    </ul>
+</div>
